@@ -158,5 +158,65 @@ Luego de esto ya podemos correr el comando, para compilar el sistema que es:
 
 <pre> npm run build </pre>
 
+<br><br><br>
+<h3><b>CLASE NUMERO 8 - 150423</b></h3>
+<br><br>
+
+En esta sección se estará trabajando en la carga y organización de los CSS. Para esto se requiere el siguiente plugin.
+
+<pre> 
+    npm install mini-css-extract-plugin css-loader -D
+</pre>
+
+Luego de esto es necesario modificar el template principal del proyecto ubicado en public/template.html, ya que webpack lo hace de manera automática. <br> <br> Eliminar esta linea de codigo que corresponde a la importación manual de los estilos.
+
+<pre > #link rel="stylesheet" href="../src/styles/main.css"> </pre>
+
+
+Luego de esto es necesario modificar el ./src/index.js para agregar los estilos.
+
+Entonces importamos en este archivo lo siguiente:
+
+<pre> import './styles/main.css'; </pre>
+
+Luego se necesita entonces agregar la siguiente configuración para el plugin de css.
+
+Primero es necesario importar el plugin a utilizar en en webpack.config.js, mediante la siguiente instrucción
+
+<pre> const MiniCssExtractPlugin = require('mini-css-extract-plugin'); </pre>
+
+Luego agregar a la sección de módulos la siguiente regla.
+
+<pre> 
+    {
+        test:/\.css$/i,
+        use:[ MiniCssExtractPlugin.loader, css-loader],
+
+    }
+</pre>
+
+En la cual se indica que se estara buscando los archivos con extension .css y se usara lo antes importado al archivo, que seria el MiniCssExtractPlugin por un lado se encarga de tomar el css y pasarlo a otro archivo separado y con el .loader le decimos con que loader vamos a optimizarlo agregamos luego el css-loader
+
+Tambien es necesario agregar esta configuracion en la zone de plugins, para que se pueda ejecutar al momento de compilar mediante la adicion de:
+
+<pre>new MiniCssExtractPlugin(), esta zona del archivo webpack.config.js quedaria de la siguiente manera luego de la modificación: 
+     
+    plugins: [
+        new HtmlWebpackPlugin({
+
+                inject: true,
+                template: './public/index.html',
+                filename: './index.html'
+
+            }
+        ), 
+        new MiniCssExtractPlugin(),
+    ]
+
+</pre>
+
+Luego ya podemos ejecutar las pruebas mediante el comando:
+
+<pre> npm run build </pre>
 
 
