@@ -1,7 +1,9 @@
 import getData from '../utils/getData.js';
 
 const Template = async () => {
+  
   const data = await getData();
+  
   const view = `
     <div class="About">
       <div class="card">
@@ -36,6 +38,7 @@ const Template = async () => {
       </div>
     </div>
   `;
+  
   return view;
 };
 
