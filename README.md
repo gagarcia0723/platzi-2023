@@ -1,5 +1,4 @@
-# platzi-2023
-Cursos de platzi, en los que he participado
+# platzi-2023 - Cursos de platzi
 
 Objetivos Iniciales:
 
@@ -10,5 +9,7 @@ Objetivos Iniciales:
 3. Al terminar react, estaré realizando también actualizaciones en la página de panama-tec mediante webpack y react, el objetivo es poder utilizar un servicio de hosting gratuito para migrar la página manteniendo el mismo nombre de dominio.
 
 4. Afianzar Js vanilla, mediante web pack para creación de spa.
+
+5. Tener un portafolio con contenido de calidad creado por mi, en donde se pueda utilizar la información como refencia para otros compañeros.
 
 
