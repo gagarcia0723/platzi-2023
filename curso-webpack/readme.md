@@ -22,15 +22,16 @@ su ubicacion en los directorios. Y el punto de salida que seria la carpeta de di
 
 siempre al crear el archivo de configuracion webpack.config.js 
 inicia importando const path = require('path');
+<pre>
+    module.exports = {
+        entry: './src/index.js',
 
-module.exports = {
-    entry: './src/index.js',
-    
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
-    }
-} 
+        output: {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'main.js'
+        }
+    } 
+</pre>
 
 el entry es el lugar en donde esta ubicado el index.js,
 el output para configurarlo se utiliza path.resolve lo cual nos ayuda a ubicar el directorio exacto en donde estara el proyecto, asi al momento de realizar la instalacion en un servidor remoto el mismo puede encontrarse mucho más facil.
